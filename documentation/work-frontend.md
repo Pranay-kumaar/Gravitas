@@ -1,6 +1,6 @@
 ﻿# Work Frontend Documentation
 
-## 🌐 General Website Structure
+##  General Website Structure
 
 Implement a responsive Navbar on every page with links:
 
@@ -15,7 +15,7 @@ Ensure consistent navbar styling across all pages.
 
 Implement responsive design (mobile, tablet, desktop).
 
-## 🏠 Home Page
+##  Home Page
 
 Add club introduction section (mission, activities, upcoming events).
 
@@ -34,7 +34,7 @@ Add Contact Us section with:
 - Club email, phone number
 - A simple inquiry form (Name, Email, Message).
 
-## 🎉 Events Pages (one for each: Survival Showdown, Hackathon, Data Alchemy)
+##  Events Pages (one for each: Survival Showdown, Hackathon, Data Alchemy)
 
 Create dedicated event page layouts (linked from Navbar dropdown).
 
@@ -46,7 +46,7 @@ Each page should include:
   - One linking to custom club registration form.
   - One linking to VIT's Gravitas website page.
 
-## 📝 Registration Page
+##  Registration Page
 
 Create a central registration hub page with options for all three events.
 
@@ -72,7 +72,7 @@ After form completion, show two buttons:
 - One → Club Website form submission.
 - One → Gravitas link.
 
-## 👥 Team Section
+##  Team Section
 
 Design a grid/card layout showcasing developers.
 
@@ -84,7 +84,7 @@ Each card should have:
 - Short bio
 - Contact/social links
 
-## 📱 Other Frontend Enhancements
+##  Other Frontend Enhancements
 
 - Ensure uniform theme, typography, and colors across all pages.
 - Add hover effects, animations, or transitions for buttons, links, and cards.
