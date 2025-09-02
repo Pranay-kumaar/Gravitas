@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - TAM Events</title>
+    <link rel="stylesheet" href="registration.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logodiv">
+                <a href="index.html">
+                    <img src="logo.jpeg" alt="logo" id="logo">
+                </a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="navList">
+                <li><a href="index.html">HOME</a></li>
+                <li class="dropdown">
+                    <a href="#events" class="dropbtn">EVENTS</a>
+                    <div class="dropdown-content">
+                        <a href="survival.html">SURVIVAL SHOWDOWN</a>
+                        <a href="data.html">DATA ALCHEMY</a>
+                        <a href="code.html">CODE CORTEX</a>
+                    </div>
+                </li>
+                <li><a href="registration.html" class="active">REGISTRATION</a></li>
+                <li><a href="#team">TEAM</a></li>
+                <li><a href="#socials">SOCIALS</a></li>
+                <li><a href="#contact">CONTACT US</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="registration-main">
+        <div class="hero-section">
+            <h1>Event Registration</h1>
+            <p>Choose your event and register to be part of the TAM experience</p>
+        </div>
+
+        <!-- Event Selection Section -->
+        <div class="event-selection" id="eventSelection">
+            <h2>Select Your Event</h2>
+            <div class="event-cards">
+                <div class="event-card" data-event="survival">
+                    <img src="survival_logo.PNG" alt="Survival Showdown">
+                    <h3>Survival Showdown</h3>
+                    <p>Team-based escape room challenge</p>
+                    <button class="select-event-btn" data-event="survival">Register</button>
+                </div>
+                <div class="event-card" data-event="hackathon">
+                    <img src="hack.jpeg" alt="Code Cortex Hackathon">
+                    <h3>Code Cortex</h3>
+                    <p>Team-based coding competition</p>
+                    <button class="select-event-btn" data-event="hackathon">Register</button>
+                </div>
+                <div class="event-card" data-event="data">
+                    <img src="data_logo.png" alt="Data Alchemy">
+                    <h3>Data Alchemy</h3>
+                    <p>Individual data science competition</p>
+                    <button class="select-event-btn" data-event="data">Register</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Registration Forms Section -->
+        <div class="registration-forms" id="registrationForms" style="display: none;">
+            <div class="form-header">
+                <button class="back-btn" id="backToEvents">← Back to Events</button>
+                <h2 id="formTitle">Registration Form</h2>
+            </div>
+
+            <!-- Team-based events (Survival Showdown & Hackathon) -->
+            <div class="team-registration" id="teamRegistration" style="display: none;">
+                <div class="role-selection">
+                    <h3>Choose Your Role</h3>
+                    <div class="role-buttons">
+                        <button class="role-btn active" data-role="leader">Team Leader</button>
+                        <button class="role-btn" data-role="member">Team Member</button>
+                    </div>
+                </div>
+
+                <!-- Team Leader Form -->
+                <form class="registration-form" id="teamLeaderForm" style="display: none;">
+                    <h4>Team Leader Registration</h4>
+                    <div class="form-group">
+                        <label for="leaderName">Full Name *</label>
+                        <input type="text" id="leaderName" name="leaderName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="leaderRegNo">Registration Number *</label>
+                        <input type="text" id="leaderRegNo" name="leaderRegNo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="leaderEmail">Email ID *</label>
+                        <input type="email" id="leaderEmail" name="leaderEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="leaderContact">Contact Number *</label>
+                        <input type="tel" id="leaderContact" name="leaderContact" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teamName">Team Name *</label>
+                        <input type="text" id="teamName" name="teamName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teamSize">Number of Members *</label>
+                        <select id="teamSize" name="teamSize" required>
+                            <option value="">Select team size</option>
+                            <option value="2">2 members</option>
+                            <option value="3">3 members</option>
+                            <option value="4">4 members</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Team ID (Auto-generated)</label>
+                        <div class="team-id-display" id="teamIdDisplay">----</div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">Submit Registration</button>
+                    </div>
+                </form>
+
+                <!-- Team Member Form -->
+                <form class="registration-form" id="teamMemberForm" style="display: none;">
+                    <h4>Team Member Registration</h4>
+                    <div class="form-group">
+                        <label for="memberName">Full Name *</label>
+                        <input type="text" id="memberName" name="memberName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="memberRegNo">Registration Number *</label>
+                        <input type="text" id="memberRegNo" name="memberRegNo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="memberEmail">Email ID *</label>
+                        <input type="email" id="memberEmail" name="memberEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="memberContact">Contact Number *</label>
+                        <input type="tel" id="memberContact" name="memberContact" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="existingTeamId">Existing Team ID *</label>
+                        <input type="text" id="existingTeamId" name="existingTeamId" placeholder="Enter 4-digit Team ID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="memberTeamName">Team Name *</label>
+                        <input type="text" id="memberTeamName" name="memberTeamName" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">Submit Registration</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Individual event (Data Alchemy) -->
+            <form class="registration-form" id="individualForm" style="display: none;">
+                <h4>Individual Registration</h4>
+                <div class="form-group">
+                    <label for="individualName">Full Name *</label>
+                    <input type="text" id="individualName" name="individualName" required>
+                </div>
+                <div class="form-group">
+                    <label for="individualRegNo">Registration Number *</label>
+                    <input type="text" id="individualRegNo" name="individualRegNo" required>
+                </div>
+                <div class="form-group">
+                    <label for="individualEmail">Email ID *</label>
+                    <input type="email" id="individualEmail" name="individualEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="individualContact">Contact Number *</label>
+                    <input type="tel" id="individualContact" name="individualContact" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Submit Registration</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Registration Options Modal -->
+        <div class="modal" id="registrationModal" style="display: none;">
+            <div class="modal-content">
+                <h3>Choose Registration Method</h3>
+                <p>Your registration details have been collected. Choose how you'd like to proceed:</p>
+                <div class="modal-buttons">
+                    <button class="modal-btn club-btn" id="clubRegistration">Submit to Club Website</button>
+                    <button class="modal-btn vit-btn" id="vitRegistration">Go to VIT Gravitas</button>
+                </div>
+                <button class="close-modal" id="closeModal">×</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="registration.js"></script>
+</body>
+</html>
