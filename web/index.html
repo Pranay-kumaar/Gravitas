@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logodiv" id="#home">
+                <img src="logo.jpeg" alt="logo" id="logo">
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="navList">
+                <li><a href="#home">HOME</a></li>
+                <li class="dropdown">
+                    <a href="#events" class="dropbtn">EVENTS</a>
+                    <div class="dropdown-content">
+                        <a href="survival.html">SURVIVAL SHOWDOWN</a>
+                        <a href="data.html">DATA ALCHEMY</a>
+                        <a href="code.html">CODE CORTEX</a>
+                    </div>
+                </li>
+                <li><a href="#about">ABOUT US</a></li>
+                <li><a href="#contact">CONTACT US</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main" id="home">
+        <div class="section1">
+        <div class="left">
+            <div class="leftheading">
+                   <h1 class="heading">THE AI & ML CLUB </h1>
+                    <h3 class="heading2"> VIT VELLORE    </h3>
+            </div>
+            <div class="leftpara">
+                <p class="leftp">The AI & ML Club is a community for curious minds passionate about Artificial Intelligence and Machine Learning. We explore cutting-edge technologies, build innovative projects, and learn through workshops, discussions, and collaborations. Whether beginner or advanced, members gain hands-on experience and insights into shaping the future with AI.</p>
+            </div>
+        </div>
+        <div class="right">
+            <img src="Frame 4.png" alt="rightimg">
+        </div>
+        
+    </div>
+    <div class="section2">
+            <p class="section2p">✨ WE ARE THE TAM-FAM ✨</p>
+            <img src="tam_fam.jpeg" alt="tam_fam" class="tam_fam">
+        </div>
+    <hr style="height: 0.5px;">
+   <div class="section3" id="events">
+    <h1>EVENTS</h1>
+    <div class="carousel">
+        <div class="carousel-track">
+            <div class="carousel-item">
+                <a href="survival.html">
+                    <img src="survival.jpeg" alt="Event 1">
+                    <h3>SURVIVAL SHOWDOWN</h3>
+                    <p>Twisted puzzles that mess with your mind</p>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="data.html">
+                    <img src="data.jpeg" alt="Event 2">
+                    <h3>DATA ALCHEMY</h3>
+                    <p>Learn to turn data into knowledge.</p>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="code.html">
+                    <img src="hack.jpeg" alt="Event 3">
+                    <h3>CODECORTEX</h3>
+                    <p>Where your brain meets the ultimate coding challenge!</p>
+                </a>
+            </div>
+        </div>
+        <button class="carousel-btn prev">&#10094;</button>
+        <button class="carousel-btn next">&#10095;</button>
+    </div>
+</div>
+
+    <div class="section4" id="about">
+        <h1 class="sec4heading">ABOUT US</h1>
+        <div class="subsec4">
+            <div class="sec4left">
+            <p class="leftp">Whether you're a seasoned expert or just beginning your journey in Artificial Intelligence and Machine Learning, our vibrant community welcomes you. The AI & ML Club is a student-led initiative committed to exploring the transformative potential of AI and ML across diverse domains such as healthcare, finance, and education. Through interactive workshops, seminars with industry professionals, and hands-on projects, we empower students to deepen their technical knowledge, solve real-world challenges, and drive innovation. Together, we aim to shape the future of technology while fostering collaboration and a passion for AI and ML.</p>
+            </div>
+            <div style="border-left:1px solid #fff;height:500px"></div>
+            <div class="sec4right">
+            <p class="rightp">Our mission is to educate, inspire, and support students in pursuing their passion for AI and ML, providing a platform to grow, innovate, and make meaningful contributions. Be a part of something extraordinary—join us today!</p>
+            </div>
+        </div>
+    </div>
+        <div class="section5" id="contact">
+    <div class="contact-container">
+        <div class="contact-text">
+            <h2>Get in Touch</h2>
+            <p>Have questions or want to collaborate? Reach out to us!</p>
+            <div class="contact-details">
+                <p><strong>📍 Address:</strong> VIT University, Vellore, India 632014</p>
+                <p><strong>📧 Email:</strong> <a href="mailto:mlai@vit.ac.in">mlai@vit.ac.in</a></p>
+            </div>
+        </div>
+
+        <div class="contact-form-container">
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script>
+    const track = document.querySelector('.carousel-track');
+    const items = document.querySelectorAll('.carousel-item');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    let index = 0;
+
+    function updateCarousel() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        index = (index + 1) % items.length;
+        updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        index = (index - 1 + items.length) % items.length;
+        updateCarousel();
+    });
+
+    setInterval(() => {
+        index = (index + 1) % items.length;
+        updateCarousel();
+    }, 5000);
+
+    // Mobile menu toggle
+const navToggle = document.getElementById('navToggle');
+const navList = document.getElementById('navList');
+
+navToggle.addEventListener('click', () => {
+    navList.classList.toggle('active');
+});
+
+// Close menu when clicking a link
+document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+        navList.classList.remove('active');
+    });
+});
+
+document.querySelector('.dropdown').addEventListener('click', function(e) {
+    if (window.innerWidth <= 768) {
+        e.preventDefault();
+        this.classList.toggle('active');
+    }
+});
+</script>
+</html>
